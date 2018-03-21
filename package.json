@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
+  "config": {
+    "bin_dir": "node_modules/.bin"
+  },
   "scripts": {
     "start": "electron .",
     "build:sass": "node-sass --output-style expanded --source-map true --source-map-contents true assets/stylesheets/scss/application.scss assets/stylesheets/css/application.css",
-    "watch:sass": "node-sass --output-style expanded --source-map true --source-map-contents true assets/stylesheets/scss/application.scss assets/stylesheets/css/application.css --watch --recursive"
+    "watch:sass": "node-sass --output-style expanded --source-map true --source-map-contents true assets/stylesheets/scss/application.scss assets/stylesheets/css/application.css --watch --recursive",
+    "build:ts": "./node_modules/.bin/tsc -p tsconfig.json --outFile assets/javascripts/app.js",
+    "watch:ts": "./node_modules/.bin/tsc -p tsconfig.json --outFile assets/javascripts/app.js --watch",
+    "minify:js": "./node_modules/.bin/uglifyjs assets/javascripts/app.js --output assets/javascripts/app.min.js",
+    "watch": "npm run watch:sass & npm run watch:ts & npm run minify:js"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -19,12 +26,16 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.7.8"
+    "electron": "^1.7.13"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
+    "graphql": "^0.13.2",
     "jquery": "^3.2.1",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.7.2",
+    "typescript": "^2.7.2",
+    "uglify-es": "^3.3.9",
+    "watch": "^1.0.2"
   }
 }
