@@ -282,286 +282,134 @@
         </div>
       </div>
 
-
       <div class="row">
         <div class="col-md-12">
-          <ul class="list-group">
-            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center bg-dark" data-toggle="collapse" href="#task-readme-collapse" role="button" aria-expanded="false" aria-controls="task-readme-collapse">
-              <h5 class="mr-1"><span class="badge badge-primary mr-2 font-italic">Todo</span></h5>
-              <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
-              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
-              <div class="input-group col-md-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text bg-dark text-white border-0 font-italic">Cost</div>
-                </div>
-                <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark text-success border-0 " value="2(0)">
-              </div>
-              <h5 class="mt-1"><span class="badge badge-danger ml-1 font-italic">high</span></h5>
-              <div class="btn-group btn-group-md">
-                <div class="dropdown">
-                  <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-success font-italic">Push</span>
+          <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card mb-2 bg-dark">
+              <div class="card-header d-flex flex-row" role="tab" id="headingTwo">
+                <h5 class="m-auto">
+                  <a class="collapsed text-dark" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                    <span class="badge badge-todo">Todo</span>
                   </a>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">Issue</span>
-                    </a>
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">PullReq</span>
-                    </a>
-                  </div><!-- /.dropdown-menu -->
+                </h5>
+                <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
+                <div class="m-auto">
+                  <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
                 </div>
-              </div>
-
-            </li>
-
-            <!-- Readme Area-->
-            <li class="list-group-item list-group-item-task-readme d-flex justify-content-between align-items-center bg-dark">
-                <div id="task-readme-collapse" class="col-md-12 collapse" style="color: white">
-                  <div class="form-group">
-                    <textarea rows="10" class="form-control form-control-lg col-md-12 list-group-item-task-form-text bg-dark text-success mb-2" placeholder="Please enter a task name"></textarea>
+                <div class="input-group col-md-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text bg-dark text-white border-0 font-italic">Cost</div>
+                  </div>
+                  <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark text-success border-0 " value="2(0)">
+                </div>
+                <h5 class="m-auto"><span class="badge badge-high">high</span></h5>
+                <div class="btn-group btn-group-md m-auto">
+                  <div class="dropdown">
+                    <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="text-success font-italic">Push</span>
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item text-success" href="#">
+                        <span class="text-success font-italic">Issue</span>
+                      </a>
+                      <a class="dropdown-item text-success" href="#">
+                        <span class="text-success font-italic">PullReq</span>
+                      </a>
+                    </div><!-- /.dropdown-menu -->
                   </div>
                 </div>
-            </li>
-            <!-- End Readme Area-->
 
-            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center bg-dark" data-toggle="collapse" href="#task-readme-collapse2" role="button" aria-expanded="false" aria-controls="task-readme-collapse">
-              <h5><span class="badge badge-primary mr-2 font-italic bg-warning">Doing</span></h5>
-              <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
-              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
-              <div class="input-group col-md-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text bg-dark text-white border-0 font-italic">Cost</div>
-                </div>
-                <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark text-warning border-0 " value="2(0)">
-              </div>
-              <h5 class="mt-1"><span class="badge badge-success ml-1 font-italic">Medium</span></h5>
-              <div class="btn-group btn-group-md">
-                <div class="dropdown">
-                  <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-success font-italic">Push</span>
+              </div><!-- /.card-header -->
+              <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  <textarea rows="10" class="form-control form-control-lg col-md-12 list-group-item-task-form-text bg-dark text-success mb-2" placeholder="Task Readme"></textarea>
+                </div><!-- /.card-body -->
+              </div><!-- /.collapse -->
+            </div><!-- /.card -->
+
+
+            <div class="card mb-2 bg-dark">
+              <div class="card-header d-flex flex-row" role="tab" id="headingThree">
+                <h5 class="m-auto">
+                  <a class="collapsed text-dark" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+                    <span class="badge badge-done">Done</span>
                   </a>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">Issue</span>
-                    </a>
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">PullReq</span>
-                    </a>
-                  </div><!-- /.dropdown-menu -->
+                </h5>
+                <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
+                <div class="m-auto">
+                  <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
                 </div>
-              </div>
-            </li>
-            <!-- Readme Area-->
-            <li class="list-group-item list-group-item-task-readme d-flex justify-content-between align-items-center bg-dark">
-                <div id="task-readme-collapse2" class="col-md-12 collapse" style="color: white">
-                  <div class="form-group">
-                    <textarea rows="10" class="form-control form-control-lg col-md-12 list-group-item-task-form-text bg-dark text-success mb-2" placeholder="Please enter a task name"></textarea>
+                <div class="input-group col-md-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text bg-dark text-white border-0 font-italic">Cost</div>
+                  </div>
+                  <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark text-success border-0 " value="2(0)">
+                </div>
+                <h5 class="m-auto"><span class="badge badge-medium">medium</span></h5>
+                <div class="btn-group btn-group-md m-auto">
+                  <div class="dropdown">
+                    <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="text-success font-italic">Push</span>
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item text-success" href="#">
+                        <span class="text-success font-italic">Issue</span>
+                      </a>
+                      <a class="dropdown-item text-success" href="#">
+                        <span class="text-success font-italic">PullReq</span>
+                      </a>
+                    </div><!-- /.dropdown-menu -->
                   </div>
                 </div>
-            </li>
-            <!-- End Readme Area-->
+              </div><!-- /.card-header -->
+              <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                  <textarea rows="10" class="form-control form-control-lg col-md-12 list-group-item-task-form-text bg-dark text-success mb-2" placeholder="Task Readme"></textarea>
+                </div><!-- /.card-body -->
+              </div><!-- /.collapse -->
+            </div><!-- /.card -->
 
-            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center bg-dark">
-              <h5 class="mt-1 mr-1"><span class="badge badge-primary ml-1 font-italic bg-success">Done</span></h5>
-              <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
-              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
-              <div class="input-group col-md-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text text-white border-0 bg-dark font-italic">Cost</div>
-                </div>
-                <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark border-0 text-danger" value="2(0)">
-              </div>
-              <h5 class="mt-1"><span class="badge badge-info ml-1 font-italic">Low</span></h5>
-              <div class="btn-group btn-group-md">
-                <div class="dropdown">
-                  <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-success font-italic">Push</span>
+
+            <div class="card mb-2 bg-dark">
+              <div class="card-header d-flex flex-row" role="tab" id="headingThree">
+                <h5 class="m-auto">
+                  <a class="collapsed text-dark" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+                    <span class="badge badge-doing">Doing</span>
                   </a>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">Issue</span>
-                    </a>
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">PullReq</span>
-                    </a>
-                  </div><!-- /.dropdown-menu -->
+                </h5>
+                <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
+                <div class="m-auto">
+                  <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
                 </div>
-              </div>
-            </li>
-
-
-            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center bg-dark">
-              <h5 class="mr-1"><span class="badge badge-primary mr-2 font-italic">Todo</span></h5>
-              <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
-              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
-              <div class="input-group col-md-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text bg-dark text-white border-0 font-italic">Cost</div>
+                <div class="input-group col-md-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text bg-dark text-white border-0 font-italic">Cost</div>
+                  </div>
+                  <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark text-success border-0 " value="2(0)">
                 </div>
-                <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark text-success border-0 " value="2(0)">
-              </div>
-              <h5 class="mt-1"><span class="badge badge-danger ml-1 font-italic">high</span></h5>
-              <div class="btn-group btn-group-md">
-                <div class="dropdown">
-                  <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-success font-italic">Push</span>
-                  </a>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">Issue</span>
+                <h5 class="m-auto"><span class="badge badge-low">low</span></h5>
+                <div class="btn-group btn-group-md m-auto">
+                  <div class="dropdown">
+                    <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="text-success font-italic">Push</span>
                     </a>
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">PullReq</span>
-                    </a>
-                  </div><!-- /.dropdown-menu -->
+                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item text-success" href="#">
+                        <span class="text-success font-italic">Issue</span>
+                      </a>
+                      <a class="dropdown-item text-success" href="#">
+                        <span class="text-success font-italic">PullReq</span>
+                      </a>
+                    </div><!-- /.dropdown-menu -->
+                  </div>
                 </div>
-              </div>
-            </li>
-
-            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center bg-dark">
-              <h5><span class="badge badge-primary mr-2 font-italic bg-warning">Doing</span></h5>
-              <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
-              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
-              <div class="input-group col-md-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text bg-dark text-white border-0 font-italic">Cost</div>
-                </div>
-                <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark text-warning border-0 " value="2(0)">
-              </div>
-              <h5 class="mt-1"><span class="badge badge-success ml-1 font-italic">Medium</span></h5>
-              <div class="btn-group btn-group-md">
-                <div class="dropdown">
-                  <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-success font-italic">Push</span>
-                  </a>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">Issue</span>
-                    </a>
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">PullReq</span>
-                    </a>
-                  </div><!-- /.dropdown-menu -->
-                </div>
-              </div>
-            </li>
-
-            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center bg-dark">
-              <h5 class="mt-1 mr-1"><span class="badge badge-primary ml-1 font-italic bg-success">Done</span></h5>
-              <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
-              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
-              <div class="input-group col-md-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text text-white border-0 bg-dark font-italic">Cost</div>
-                </div>
-                <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark border-0 text-danger" value="2(0)">
-              </div>
-              <h5 class="mt-1"><span class="badge badge-info ml-1 font-italic">Low</span></h5>
-              <div class="btn-group btn-group-md">
-                <div class="dropdown">
-                  <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-success font-italic">Push</span>
-                  </a>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">Issue</span>
-                    </a>
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">PullReq</span>
-                    </a>
-                  </div><!-- /.dropdown-menu -->
-                </div>
-              </div>
-            </li>
-
-            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center bg-dark">
-              <h5 class="mr-1"><span class="badge badge-primary mr-2 font-italic">Todo</span></h5>
-              <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
-              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
-              <div class="input-group col-md-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text bg-dark text-white border-0 font-italic">Cost</div>
-                </div>
-                <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark text-success border-0 " value="2(0)">
-              </div>
-              <h5 class="mt-1"><span class="badge badge-danger ml-1 font-italic">high</span></h5>
-              <div class="btn-group btn-group-md">
-                <div class="dropdown">
-                  <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-success font-italic">Push</span>
-                  </a>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">Issue</span>
-                    </a>
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">PullReq</span>
-                    </a>
-                  </div><!-- /.dropdown-menu -->
-                </div>
-              </div>
-            </li>
-
-            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center bg-dark">
-              <h5><span class="badge badge-primary mr-2 font-italic bg-warning">Doing</span></h5>
-              <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
-              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
-              <div class="input-group col-md-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text bg-dark text-white border-0 font-italic">Cost</div>
-                </div>
-                <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark text-warning border-0 " value="2(0)">
-              </div>
-              <h5 class="mt-1"><span class="badge badge-success ml-1 font-italic">Medium</span></h5>
-              <div class="btn-group btn-group-md">
-                <div class="dropdown">
-                  <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-success font-italic">Push</span>
-                  </a>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">Issue</span>
-                    </a>
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">PullReq</span>
-                    </a>
-                  </div><!-- /.dropdown-menu -->
-                </div>
-              </div>
-            </li>
-
-            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center bg-dark">
-              <h5 class="mt-1 mr-1"><span class="badge badge-primary ml-1 font-italic bg-success">Done</span></h5>
-              <textarea class="form-control form-control-lg col-md-7 list-group-item-task-form-text bg-dark text-success mr-2" placeholder="Please enter a task name"></textarea>
-              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
-              <div class="input-group col-md-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text text-white border-0 bg-dark font-italic">Cost</div>
-                </div>
-                <input type="text" class="form-control form-control-lg list-group-item-task-collapse-form-text bg-dark border-0 text-danger" value="2(0)">
-              </div>
-              <h5 class="mt-1"><span class="badge badge-info ml-1 font-italic">Low</span></h5>
-              <div class="btn-group btn-group-md">
-                <div class="dropdown">
-                  <a class="btn dropdown-toggle text-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-success font-italic">Push</span>
-                  </a>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">Issue</span>
-                    </a>
-                    <a class="dropdown-item text-success" href="#">
-                      <span class="text-success font-italic">PullReq</span>
-                    </a>
-                  </div><!-- /.dropdown-menu -->
-                </div>
-              </div>
-            </li>
-
-
-
-          </ul>
+              </div><!-- /.card-header -->
+              <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                  <textarea rows="10" class="form-control form-control-lg col-md-12 list-group-item-task-form-text bg-dark text-success mb-2" placeholder="Task Readme"></textarea>
+                </div><!-- /.card-body -->
+              </div><!-- /.collapse -->
+            </div><!-- /.card -->
         </div>
       </div>
     </div>

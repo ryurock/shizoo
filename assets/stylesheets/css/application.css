@@ -8282,4 +8282,52 @@ body {
   box-shadow: none;
 }
 
+.badge-todo {
+  padding: 0.5rem 0.60rem;
+  margin-right: 0.75rem;
+  font-style: italic;
+  background: rgba(0, 135, 186, 0.75);
+  color: #f8f9fa;
+}
+
+.badge-doing {
+  padding: 0.5rem 0.5rem;
+  margin-right: 0.75rem;
+  font-style: italic;
+  background: rgba(255, 136, 0, 0.75);
+  color: #f8f9fa;
+}
+
+.badge-done {
+  padding: 0.5rem 0.50rem;
+  margin-right: 0.75rem;
+  font-style: italic;
+  background: rgba(119, 179, 0, 0.75);
+  color: #f8f9fa;
+}
+
+.badge-high {
+  padding: 0.25rem 1rem;
+  margin-right: 0.75rem;
+  font-style: italic;
+  background: rgba(204, 0, 0, 0.75);
+  color: #f8f9fa;
+}
+
+.badge-medium {
+  padding: 0.25rem;
+  margin-right: 0.75rem;
+  font-style: italic;
+  background: rgba(119, 179, 0, 0.75);
+  color: #f8f9fa;
+}
+
+.badge-low {
+  padding: 0.25rem 1.15rem;
+  margin-right: 0.75rem;
+  font-style: italic;
+  background: rgba(153, 51, 204, 0.75);
+  color: #f8f9fa;
+}
+
 /*# sourceMappingURL=application.css.map */
