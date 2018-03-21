@@ -13,7 +13,7 @@
     "build:ts": "./node_modules/.bin/tsc -p tsconfig.json --outFile assets/javascripts/app.js",
     "watch:ts": "./node_modules/.bin/tsc -p tsconfig.json --outFile assets/javascripts/app.js --watch",
     "minify:js": "./node_modules/.bin/uglifyjs assets/javascripts/app.js --output assets/javascripts/app.min.js",
-    "watch": "npm run watch:sass & npm run watch:ts & npm run minify:js"
+    "watch": "npm run watch:sass & npm run minify:js"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
