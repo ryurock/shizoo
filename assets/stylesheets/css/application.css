@@ -8242,4 +8242,28 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Roboto Slab", "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
 
+.table-list-filters {
+  margin: auto;
+  background: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 0px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.list-group-item-task {
+  font-size: 1.3rem;
+}
+
+.list-group-item-task:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.list-group-item-task-form-text {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 /*# sourceMappingURL=application.css.map */

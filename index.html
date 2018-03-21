@@ -32,15 +32,23 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <form class="form-inline" action="">
-            <div class="input-group input-group-lg w-100">
-              <input type="email" class="form-control" placeholder="Your email">
-              <div class="input-group-append">
-                <button class="btn btn-primary btn-lg" type="button">Subscribe</button>
-              </div>
-            </div>
-          </form>
+          <div class="input-group input-group-lg w-100">
+            <div class="input-group-prepend">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Filter
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">メニュー1</a>
+                ...
+                <div role="separator" class="dropdown-divider"></div>
+                ...
+              </div><!-- /.dropdown-menu -->
+            </div><!-- /.input-group-prepend -->
+            <input type="text" class="form-control" aria-label="...">
+          </div><!-- /.input-group -->
         </div>
+
+
         <div class="col-md-4 text-center">
           <div class="btn-group btn-group-lg">
             <a href="#" class="btn btn-outline-primary">Btn 1</a>
@@ -54,14 +62,113 @@
       </div>
     </div>
   </div>
+
   <div class="py-2">
     <div class="container">
+      <div class="row table-list-filters">
+        <div class="col-md-5">
+          <a class="btn" href="#">
+            <span class="badge badge-pill badge-light">9</span>
+            Todo
+          </a>
+          <a class="btn" href="#">
+            <span class="badge badge-pill badge-light">2</span>
+            Doing
+          </a>
+          <a class="btn" href="#">
+            <span class="badge badge-pill badge-light">120</span>
+            Done
+          </a>
+        </div>
+
+        <div class="col-md-7">
+          <div class="btn-group btn-group-md">
+            <div class="dropdown">
+              <a class="btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ドロップダウンリンク
+              </a>
+              <!-- ドロップメニューの設定 -->
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">メニュー1</a>
+                <a class="dropdown-item" href="#">メニュー2</a>
+                <a class="dropdown-item" href="#">メニュー3</a>
+              </div><!-- /.dropdown-menu -->
+            </div>
+
+            <div class="dropdown">
+              <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ドロップダウンリンク
+              </a>
+              <!-- ドロップメニューの設定 -->
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">メニュー1</a>
+                <a class="dropdown-item" href="#">メニュー2</a>
+                <a class="dropdown-item" href="#">メニュー3</a>
+              </div><!-- /.dropdown-menu -->
+            </div>
+
+            <div class="dropdown">
+              <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ドロップダウンリンク
+              </a>
+              <!-- ドロップメニューの設定 -->
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">メニュー1</a>
+                <a class="dropdown-item" href="#">メニュー2</a>
+                <a class="dropdown-item" href="#">メニュー3</a>
+              </div><!-- /.dropdown-menu -->
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-12">
           <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" style="backgroud-color:black"> <span style="color:#fff" class="">Cras justo odio</span> <span class="badge badge-primary badge-pill">2</span></li>
-            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action"> Dapibus ac facilisis in <span class="badge badge-primary badge-pill">2</span> </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action"> Morbi leo risus <span class="badge badge-primary badge-pill">1</span> </li>
+            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center">
+              <input type="text" class="form-control list-group-item-task-form-text" placeholder="Please enter a task name">
+              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
+              <span class="badge badge-primary ml-1">Todo</span></h*>
+              <span class="badge badge-primary badge-pill ml-1 bg-white text-success">cost: 2<span class="text-white">(+0)</span></span>
+            </li>
+            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center">
+              <input type="text" class="form-control list-group-item-task-form-text" placeholder="Please enter a task name">
+              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
+              <span class="badge badge-primary ml-1">Todo</span></h*>
+              <span class="badge badge-primary badge-pill ml-1 bg-white text-warning">cost: 2(+1)</span>
+            </li>
+            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center">
+              <input type="text" class="form-control list-group-item-task-form-text" placeholder="Please enter a task name">
+              <img src="https://avatars2.githubusercontent.com/u/3800839?s=88&v=4" class="img-thumbnail ml-1 mr-1" alt="Cinque Terre" width="40"> 
+              <span class="badge badge-primary ml-1">Todo</span></h*>
+              <span class="badge badge-primary badge-pill ml-1 bg-white text-danger">cost: 2(+3)</span>
+            </li>
+            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center">
+              <input type="text" class="form-control list-group-item-task-form-text" placeholder="Please enter a task name">
+              <span class="badge badge-primary badge-pill ml-1">2</span>
+            </li>
+            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center">
+              <input type="text" class="form-control list-group-item-task-form-text" placeholder="Please enter a task name">
+              <span class="badge badge-primary badge-pill ml-1">2</span>
+            </li>
+            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center">
+              <input type="text" class="form-control list-group-item-task-form-text" placeholder="Please enter a task name">
+              <span class="badge badge-primary badge-pill ml-1">2</span>
+            </li>
+            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center">
+              <input type="text" class="form-control list-group-item-task-form-text" placeholder="Please enter a task name">
+              <span class="badge badge-primary badge-pill ml-1">2</span>
+            </li>
+            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center">
+              <input type="text" class="form-control list-group-item-task-form-text" placeholder="Please enter a task name">
+              <span class="badge badge-primary badge-pill ml-1">2</span>
+            </li>
+            <li class="list-group-item list-group-item-task d-flex justify-content-between align-items-center">
+              <input type="text" class="form-control list-group-item-task-form-text" placeholder="Please enter a task name">
+              <span class="badge badge-primary badge-pill ml-1">2</span>
+            </li>
           </ul>
         </div>
       </div>
