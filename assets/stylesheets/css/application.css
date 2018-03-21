@@ -8272,6 +8272,10 @@ body {
   /* Firefox */
 }
 
+.list-group-item-collapse {
+  font-size: 1.3rem;
+}
+
 .list-group-item-task-form-text {
   border: 0;
   border-radius: 0;
