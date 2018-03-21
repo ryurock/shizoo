@@ -8244,7 +8244,7 @@ body {
 
 .table-list-filters {
   margin: auto;
-  background: #f8f9fa;
+  background: black;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-bottom: 0px;
   border-top-left-radius: 0.25rem;
@@ -8253,11 +8253,23 @@ body {
 
 .list-group-item-task {
   font-size: 1.3rem;
+  border-bottom: solid 1px orange;
 }
 
 .list-group-item-task:first-child {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.list-group-item-task:last-child {
+  border: 0px;
+}
+
+.list-group-item-task ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #555;
+  opacity: 1;
+  /* Firefox */
 }
 
 .list-group-item-task-form-text {
