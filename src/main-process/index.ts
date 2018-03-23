@@ -1,8 +1,11 @@
 /// <reference path="../../node_modules/electron/electron.d.ts" />
 
 const electron = require('electron');
+const ipcMain: typeof Electron.ipcMain = electron.ipcMain;
 const BrowserWindow: typeof Electron.BrowserWindow = electron.BrowserWindow;
 const app: Electron.App = electron.app;
+import {OAuthGithub} from './oauth/github';
+
 
 class MyApplication {
     mainWindow: Electron.BrowserWindow = null;
@@ -10,6 +13,16 @@ class MyApplication {
     constructor(public app: Electron.App){
         this.app.on('window-all-closed', this.onWindowAllClosed);
         this.app.on('ready', this.onReady);
+        ipcMain.on('asynchronous-message', (event: any, arg: string) => {
+            if (arg == "oauth-github") {
+              console.log(OAuthGithub);
+              let oAuthGithub = new OAuthGithub();
+
+              // githubOAuth()
+            }
+            event.sender.send('asynchronous-reply', 'pong')
+          })
+          
     }
 
     onWindowAllClosed(){
