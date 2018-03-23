@@ -2,7 +2,7 @@
   "name": "shizoo",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "main.js",
+  "main": "dist/ts/index.js",
   "config": {
     "bin_dir": "node_modules/.bin"
   },
@@ -10,10 +10,10 @@
     "start": "electron .",
     "build:sass": "node-sass --output-style expanded --source-map true --source-map-contents true assets/stylesheets/scss/application.scss assets/stylesheets/css/application.css",
     "watch:sass": "node-sass --output-style expanded --source-map true --source-map-contents true assets/stylesheets/scss/application.scss assets/stylesheets/css/application.css --watch --recursive",
-    "build:ts": "./node_modules/.bin/tsc -p tsconfig.json --outFile assets/javascripts/app.js",
-    "watch:ts": "./node_modules/.bin/tsc -p tsconfig.json --outFile assets/javascripts/app.js --watch",
+    "build:ts": "./node_modules/.bin/tsc",
+    "watch:ts": "./node_modules/.bin/tsc --watch",
     "minify:js": "./node_modules/.bin/uglifyjs assets/javascripts/app.js --output assets/javascripts/app.min.js",
-    "watch": "npm run watch:sass & npm run minify:js"
+    "watch": "npm run watch:sass & npm run watch:ts"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
