@@ -1,25 +1,16 @@
 {
     "compilerOptions": {
         "target": "es2017",
-        "module": "amd",
-        "declaration": true,
+        "module": "commonJS",
         "sourceMap": true,
-        "outDir": "./js",
         "removeComments": true,
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true,
-        "experimentalDecorators": true,
-        "newLine": "LF",
-        "forceConsistentCasingInFileNames": true
+        "outDir": "./dist/ts/"
     },
     "include": [
-        "assets/typescripts/**/*.ts"
+        "src/main-process/**/*.ts"
     ],
     "exclude": [
         "node_modules",
-        "**/*.spec.ts"
+        "dist"
     ]
 }
