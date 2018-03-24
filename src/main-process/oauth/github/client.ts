@@ -1,5 +1,5 @@
 const SecretOAuth  = require('../../../../config/secret.json').oauth.github;
-const queryString  = require('querystring');
+const QueryString  = require('querystring');
 const Url          = require('url');
 const SimpleOAuth2 = require('simple-oauth2');
 
@@ -20,7 +20,7 @@ export class OAuthGithubClient {
     }
 
     async getToken(url:string):Promise<any> {
-        const query = queryString.parse(Url.parse(url).query);
+        const query = QueryString.parse(Url.parse(url).query);
         const options: { [key:string]: string } = {
             code: query.code,
             redirect_uri: "https://localhost/oauth2callback",
@@ -42,7 +42,7 @@ export class OAuthGithubClient {
         return this.client.authorizationCode.authorizeURL({
             redirect_uri: 'https://localhost/oauth2callback',
             scope: 'notifications,repo',
-            state: '3(#0/!~'
+            state: 'sc8xQBCqKE'
         });
     }
 }

@@ -32,7 +32,6 @@ export class OAuthGithub {
         });
     }
 
-
     willNavigate() {
         console.log('will-navigate');
         this.loginWindow.webContents.on('will-navigate', (event:Electron.Event, url:string):void => {
