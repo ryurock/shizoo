@@ -1,6 +1,7 @@
 const SecretOAuth  = require('../../../../config/secret.json').oauth.github;
 const queryString  = require('querystring');
 const Url          = require('url');
+const SimpleOAuth2 = require('simple-oauth2');
 
 export class OAuthGithubClient {
     credentials: {key: { key: string  } } = SecretOAuth;
@@ -10,16 +11,15 @@ export class OAuthGithubClient {
         authorizePath: '/login/oauth/authorize'  
     };
 
-    client: any = null;
+    client: typeof SimpleOAuth2 = SimpleOAuth2.create({
+        auth: this.auth,
+        client: this.credentials
+    });
 
-    constructor(){
-        this.client = require('simple-oauth2').create({
-                auth: this.auth,
-                client: this.credentials
-        });
+    constructor() {
     }
 
-    async getToken(url:string) {
+    async getToken(url:string):Promise<any> {
         const query = queryString.parse(Url.parse(url).query);
         const options: { [key:string]: string } = {
             code: query.code,
@@ -34,7 +34,7 @@ export class OAuthGithubClient {
         }
     }
 
-    accessToken(tokenObject) {
+    accessToken(tokenObject):typeof SimpleOAuth2.AccessToken {
         return this.client.accessToken.create(tokenObject);
     }
 

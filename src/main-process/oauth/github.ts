@@ -18,9 +18,6 @@ export class OAuthGithub {
         this.loginWindow.loadURL(this.client.authorizationUri());
         this.didGetRedirectRequest();
         this.willNavigate();
-
-        // loginWindow.webContents.on('will-navigate', this.willNavigate);
-        // loginWindow.webContents.on('did-get-redirect-request', this.didGetRedirectRequest);
     }
 
     didGetRedirectRequest() {
@@ -29,6 +26,7 @@ export class OAuthGithub {
             const fetchAccessToken = async ():Promise<any> => {
                 const tokenObject:{} = await client.getToken(newUrl);
                 const accessToken = client.accessToken(tokenObject);
+                console.log(accessToken)
             };
             fetchAccessToken();
         });

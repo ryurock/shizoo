@@ -16,10 +16,7 @@ class MyApplication {
         this.app.on('ready', this.onReady);
         ipcMain.on('asynchronous-message', (event: any, arg: string) => {
             if (arg == "oauth-github") {
-            //    this.oAuthGithub(new BrowserWindow({width: 400, height: 400}));
                let oAuthGithub = new OAuthGithub(new BrowserWindow({width: 400, height: 400}));
-
-              // githubOAuth()
             }
             event.sender.send('asynchronous-reply', 'pong')
           })
