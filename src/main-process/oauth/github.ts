@@ -5,44 +5,42 @@ import { BrowserWindow, EventEmitter } from "electron";
 const electron: typeof Electron = require('electron');
 const ipcMain: typeof Electron.ipcMain = electron.ipcMain;
 const SimpleOAuth2 = require('simple-oauth2');
-const eventEmitter = require('events').EventEmitter;
 
 import { OAuthGithubClient } from './github/client';
+import { resolve } from "path";
 
 export class OAuthGithub {
     loginWindow: Electron.BrowserWindow = null;
     client: OAuthGithubClient = null;
-    authEvent: EventEmitter = null;
-    
-    constructor(){
+
+    public constructor(){
         this.client = new OAuthGithubClient();
-        this.authEvent = new eventEmitter();
     }
 
-    async authorization() {
+    public async authorization() {
         this.loginWindow = new BrowserWindow({width: 400, height: 600});
         this.loginWindow.loadURL(this.client.authorizationUri());
-        // this.didGetRedirectRequest();
-        this.onAuthorization();
-        this.authEvent.on('authorized', (accessToken:string) => {
-            console.log(accessToken);
-        });
+        let token = await this.authorizedToken();
+
+        this.loginWindow.close();
     }
 
-    onAuthorization() {
-        const ev = this.authEvent;
-        const client: OAuthGithubClient = this.client;
-        const fetchAccessToken = async (url):Promise<any> => {
-            const tokenState = await client.getToken(url);
-            ev.emit('authorized', tokenState.token);
-        };
+    private async authorizedToken() {
+        return new Promise((resolve, reject) => {
+            const client: OAuthGithubClient = this.client;
+            const loginWindow: BrowserWindow = this.loginWindow;
+            const fetchAccessToken = async (url):Promise<any> => {
+                const tokenState = await client.getToken(url);
+                resolve(tokenState.token);
+            };
 
-        this.loginWindow.webContents.on('did-get-redirect-request', (event:Electron.Event, oldUrl:string, newUrl:string ) => {
-            fetchAccessToken(newUrl);
+            this.loginWindow.webContents.on('did-get-redirect-request', (event:Electron.Event, oldUrl:string, newUrl:string ) => {
+                fetchAccessToken(newUrl);
+            });
+
+            this.loginWindow.webContents.on('will-navigate', (event:Electron.Event, url:string):void => {
+                fetchAccessToken(url);
+            });
         });
-
-        this.loginWindow.webContents.on('will-navigate', (event:Electron.Event, url:string):void => {
-            fetchAccessToken(url);
-        });   
     }
 }

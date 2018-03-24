@@ -4,22 +4,29 @@ const Url          = require('url');
 const SimpleOAuth2 = require('simple-oauth2');
 
 export class OAuthGithubClient {
-    credentials: {key: { key: string  } } = SecretOAuth;
-    auth: { [key: string]: string } = {
+    private credentials: {key: { key: string  } } = SecretOAuth;
+    private auth: { [key: string]: string } = {
         tokenHost: 'https://github.com',
         tokenPath: '/login/oauth/access_token',
         authorizePath: '/login/oauth/authorize'  
     };
 
-    client: typeof SimpleOAuth2 = SimpleOAuth2.create({
+    private client: typeof SimpleOAuth2 = SimpleOAuth2.create({
         auth: this.auth,
         client: this.credentials
     });
 
-    constructor() {
+    public constructor() {}
+
+    public authorizationUri(): string {
+        return this.client.authorizationCode.authorizeURL({
+            redirect_uri: 'https://localhost/oauth2callback',
+            scope: 'notifications,repo',
+            state: 'sc8xQBCqKE'
+        });
     }
 
-    async getToken(url:string):Promise<any> {
+    public async getToken(url:string):Promise<any> {
         const query = QueryString.parse(Url.parse(url).query);
         const options: { [key:string]: string } = {
             code: query.code,
@@ -36,13 +43,5 @@ export class OAuthGithubClient {
 
     private accessToken(tokenObject):typeof SimpleOAuth2.AccessToken {
         return this.client.accessToken.create(tokenObject);
-    }
-
-    authorizationUri(): string {
-        return this.client.authorizationCode.authorizeURL({
-            redirect_uri: 'https://localhost/oauth2callback',
-            scope: 'notifications,repo',
-            state: 'sc8xQBCqKE'
-        });
     }
 }
