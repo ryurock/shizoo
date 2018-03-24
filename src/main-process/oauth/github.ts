@@ -2,7 +2,6 @@
 /// <reference path="../../../node_modules/@types/node/index.d.ts" />
 
 import { BrowserWindow } from "electron";
-
 const electron: typeof Electron = require('electron');
 const ipcMain: typeof Electron.ipcMain = electron.ipcMain;
 
@@ -12,9 +11,13 @@ import { OAuthGithubClient } from './github/client';
 export class OAuthGithub {
     loginWindow: Electron.BrowserWindow = null;
     client: OAuthGithubClient = null;
-    constructor(loginWindow: Electron.BrowserWindow){
+    
+    constructor(){
         this.client = new OAuthGithubClient();
-        this.loginWindow = loginWindow;
+    }
+
+    authorization() {
+        this.loginWindow = new BrowserWindow({width: 400, height: 600});
         this.loginWindow.loadURL(this.client.authorizationUri());
         this.didGetRedirectRequest();
         this.willNavigate();

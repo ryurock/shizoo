@@ -6,7 +6,6 @@ const BrowserWindow: typeof Electron.BrowserWindow = electron.BrowserWindow;
 const app: Electron.App = electron.app;
 import {OAuthGithub} from './oauth/github';
 
-
 class MyApplication {
     mainWindow: Electron.BrowserWindow = null;
     oAuthGithub: OAuthGithub = null;
@@ -16,10 +15,11 @@ class MyApplication {
         this.app.on('ready', this.onReady);
         ipcMain.on('asynchronous-message', (event: any, arg: string) => {
             if (arg == "oauth-github") {
-               let oAuthGithub = new OAuthGithub(new BrowserWindow({width: 400, height: 400}));
+               let oAuthGithub = new OAuthGithub();
+               oAuthGithub.authorization();
             }
             event.sender.send('asynchronous-reply', 'pong')
-          })
+        })
     }
 
     onWindowAllClosed(){
