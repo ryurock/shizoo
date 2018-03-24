@@ -34,7 +34,7 @@ export class OAuthGithubClient {
         }
     }
 
-    accessToken(tokenObject):typeof SimpleOAuth2.AccessToken {
+    private accessToken(tokenObject):typeof SimpleOAuth2.AccessToken {
         return this.client.accessToken.create(tokenObject);
     }
 
