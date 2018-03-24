@@ -9,20 +9,20 @@ import {OAuthGithub} from './oauth/github';
 
 class MyApplication {
     mainWindow: Electron.BrowserWindow = null;
+    oAuthGithub: OAuthGithub = null;
 
     constructor(public app: Electron.App){
         this.app.on('window-all-closed', this.onWindowAllClosed);
         this.app.on('ready', this.onReady);
         ipcMain.on('asynchronous-message', (event: any, arg: string) => {
             if (arg == "oauth-github") {
-              console.log(OAuthGithub);
-              let oAuthGithub = new OAuthGithub();
+            //    this.oAuthGithub(new BrowserWindow({width: 400, height: 400}));
+               let oAuthGithub = new OAuthGithub(new BrowserWindow({width: 400, height: 400}));
 
               // githubOAuth()
             }
             event.sender.send('asynchronous-reply', 'pong')
           })
-          
     }
 
     onWindowAllClosed(){

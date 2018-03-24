@@ -72,7 +72,8 @@ let githubOAuth = () => {
 
   // 認証が入った時に呼び出される
   loginWindow.webContents.on('will-navigate', (event, url) => {
-    console.log('will-navigate')
+    console.log('will-navigate');
+    // ここはredirect後の処理と一緒
   })
 
   loginWindow.on('closed', function() {
