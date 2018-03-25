@@ -7,11 +7,13 @@ const ipcMain: typeof Electron.ipcMain = electron.ipcMain;
 const SimpleOAuth2 = require('simple-oauth2');
 
 import { OAuthGithubClient } from './github/client';
-import { resolve } from "path";
+const DataStore = require('nedb');
+import * as DB from '../data-store/index';
+
 
 export class OAuthGithub {
-    loginWindow: Electron.BrowserWindow = null;
-    client: OAuthGithubClient = null;
+    private loginWindow: Electron.BrowserWindow = null;
+    private client: OAuthGithubClient = null;
 
     public constructor(){
         this.client = new OAuthGithubClient();
@@ -20,7 +22,13 @@ export class OAuthGithub {
     public async authorization() {
         this.loginWindow = new BrowserWindow({width: 400, height: 600});
         this.loginWindow.loadURL(this.client.authorizationUri());
-        let token = await this.authorizedToken();
+        const token:{} = await this.authorizedToken();
+        const db:typeof DataStore = DB.Adapter.neDb();
+        db.findOne({"token.access_token": token["access_token"]}, (err, doc) => {
+            if ( doc == null ){
+                db.insert({token: token});
+            }
+        });
 
         this.loginWindow.close();
     }

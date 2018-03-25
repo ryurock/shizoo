@@ -5,7 +5,6 @@ const ipcMain: typeof Electron.ipcMain = electron.ipcMain;
 const BrowserWindow: typeof Electron.BrowserWindow = electron.BrowserWindow;
 const app: Electron.App = electron.app;
 import {OAuthGithub} from './oauth/github';
-
 class MyApplication {
     mainWindow: Electron.BrowserWindow = null;
     oAuthGithub: OAuthGithub = null;
