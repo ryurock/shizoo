@@ -19,7 +19,7 @@ export class OAuthGithub {
         this.client = new OAuthGithubClient();
     }
 
-    public async authorization() {
+    public async authorization(event: Electron.Event):Promise<any> {
         this.loginWindow = new BrowserWindow({width: 400, height: 600});
         this.loginWindow.loadURL(this.client.authorizationUri());
         const token:{} = await this.authorizedToken();
@@ -29,7 +29,7 @@ export class OAuthGithub {
                 db.insert({token: token});
             }
         });
-
+        event.sender.send('asynchronous-reply', token);
         this.loginWindow.close();
     }
 
